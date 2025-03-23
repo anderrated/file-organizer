@@ -1,6 +1,6 @@
 public class Orgies {
     private void organiseAllFiles(String directory) {
-
+        
     }
 
     public static void main(String[] args) {
