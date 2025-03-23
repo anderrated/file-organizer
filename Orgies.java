@@ -1,10 +1,12 @@
 public class Orgies {
-    private void organise() {
+    private void organiseAllFiles(String directory) {
 
     }
-    
+
     public static void main(String[] args) {
-        String organiseDirectory = args[1];
-        this->organise(organiseDirectory);
+        String directoryPath = args[0];
+        String configPath = args[1];
+
+        organiseAllFiles(directoryPath);
     }
 }
