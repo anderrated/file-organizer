@@ -4,8 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
 
-public class Orgies {
-    private void organise(String directory) {
+public void organise(String directory) {
         File dir = new File(directory);
         // check if directory exists
         if (!dir.exists() || !dir.isDirectory()) {
@@ -34,11 +33,12 @@ public class Orgies {
             }
         }
 
-    }
+}
 
     
     public static void main(String[] args) {
-        String organiseDirectory = args[1];
-        this->organise(organiseDirectory);
+        String directoryPath = args[0];
+        String configPath = args[1];
+
+        organiseAllFiles(directoryPath);
     }
-}
