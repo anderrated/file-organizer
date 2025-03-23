@@ -1,0 +1,3 @@
+docx Documents
+pdf Documents
+xlsx Documents
