@@ -12,10 +12,10 @@ public class PropertiesFileCategoriser implements FileCategoriser {
         try {
             // file input stream for config
             InputStream input = new FileInputStream(configPath);
-            prop.load(input);
+            extensionMap.load(input);
         } catch (IOException e) {
             // io error with config path
-            throw new RuntimeException("Failed to load config file with error: " e.getMessage());
+            throw new RuntimeException("Failed to load config file with error: " + e.getMessage());
         }
     }
 
@@ -24,14 +24,14 @@ public class PropertiesFileCategoriser implements FileCategoriser {
     public String categorise(File file) {
         // get file name and extension
         String fileName = file.getName();
-        int dotIndex = name.lastIndexOf(".");
+        int dotIndex = fileName.lastIndexOf(".");
         // extension not found
         if (dotIndex == -1) {
             return null;
         }
         String fileExtension = fileName.substring(dotIndex + 1);
         if (extensionMap.containsKey(fileExtension)) {
-            return prop.getProperty(ext);
+            return extensionMap.getProperty(fileExtension);
         }
         // extension mapping not found
         return null;
