@@ -1,6 +1,6 @@
 # file-organizer
 
-A simple **Java-based file organizer** that sorts files from a given directory into subdirectories based on their file extensions. The program is configurable through a `config.txt` file, and it supports an optional flag to specify the move behavior.
+A simple **Java-based file organizer** that sorts files from a given directory into target directories based on their file extensions. The program is configurable through a `config.txt` file, and it supports an optional flag to specify the move behavior.
 
 ## Features
 
@@ -63,7 +63,7 @@ cd file-organizer
 2. **Compile the Java Files**:
 
 ```bash
-javac Orgies.java
+javac Orgeez.java
 ```
 
 3. **Run the Program**:
@@ -71,25 +71,25 @@ javac Orgies.java
 Use the following command to run the program, passing in the required arguments:
 
 ```bash
-java Orgies /path/to/directory /path/to/config.txt [-a | -c | -r]
+java Orgeez /path/to/directory configs.txt [-a | -c | -r]
 ```
 
 Example with default move flag (`-r`):
 
 ```bash
-java Orgies /path/to/directory /path/to/config.txt
+java Orgeez /path/to/directory configs.txt
 ```
 
 Example with atomic move flag (`-a`):
 
 ```bash
-java Orgies /path/to/directory /path/to/config.txt -a
+java Orgeez /path/to/directory configs.txt -a
 ```
 
 Example with copy attributes move flag (`-c`):
 
 ```bash
-java Orgies /path/to/directory /path/to/config.txt -c
+java Orgeez /path/to/directory configs.txt -c
 ```
 
 ## Example Program Flow
@@ -105,7 +105,7 @@ mp4 Movies
 ### Command
 
 ```bash
-java Orgies /Users/yourusername/Downloads /Users/yourusername/config.txt -r
+java Orgeez /Users/yourusername/Downloads configs.txt -r
 ```
 
 ### Result

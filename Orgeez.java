@@ -1,13 +1,11 @@
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Optional;
 
 import categoriser.FileCategoriser;
 import categoriser.PropertiesFileCategoriser;
 import mover.FileMover;
 
-public class Orgeez{
+public class Orgeez {
     private final FileCategoriser categoriser;
     private final FileMover mover;
     private String directoryPath;
@@ -45,7 +43,7 @@ public class Orgeez{
     public static void main(String[] args) {
         // check argument length
         if (args.length < 2) {
-            throw new RuntimeException("Invalid number of arguments, usage: java Orgies <directory_path> <config_path> [optional]<move_option_flag>");
+            throw new RuntimeException("Invalid number of arguments, usage: java Orgeez <directory_path> <config_path> [optional]<move_option_flag>");
         }
         // get arguments
         String directoryPath = args[0];
