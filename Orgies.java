@@ -36,8 +36,7 @@ public class Orgies {
                 continue;
             }
             // move file into relevant directory
-            Path targetDirectory = Paths.get(directoryCategory);
-            this.mover.moveFile(file, targetDirectory);
+            this.mover.moveFile(file, directoryCategory);
         }
 
         System.out.println("Sorting for " + this.directoryPath + " is complete :)");

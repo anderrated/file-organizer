@@ -27,8 +27,15 @@ public class FileMover {
         }
           
     }
+    // dev notes: possible expansion to include custom destination directory paths?
+    private Path resolvePath(String directoryCategory) {
+        String home = System.getProperty("user.home");
+        return Path.of(home, directoryCategory);
+    }
 
-    public void moveFile(File file, Path targetDirectory) {
+    public void moveFile(File file, String directoryCategory) {
+        // generate home path to store new directories
+        Path targetDirectory = resolvePath(directoryCategory);
         try {
             // check existence of moved to directory, create if none found
             if (!Files.exists(targetDirectory)) {
