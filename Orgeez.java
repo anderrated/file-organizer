@@ -7,12 +7,12 @@ import categoriser.FileCategoriser;
 import categoriser.PropertiesFileCategoriser;
 import mover.FileMover;
 
-public class Orgies {
+public class Orgeez{
     private final FileCategoriser categoriser;
     private final FileMover mover;
     private String directoryPath;
 
-    public Orgies(String directoryPath, String configPath, Optional<String> moveFlag) {
+    public Orgeez(String directoryPath, String configPath, Optional<String> moveFlag) {
         this.categoriser = new PropertiesFileCategoriser(configPath);
         this.mover = new FileMover(moveFlag.orElse("-r"));
         this.directoryPath = directoryPath;
@@ -53,7 +53,7 @@ public class Orgies {
         // optional argument for move flag
         Optional<String> moveFlag = (args.length >= 3) ? Optional.of(args[2]) : Optional.empty();
         // utilise client to sort directory
-        Orgies orgies = new Orgies(directoryPath, configPath, moveFlag);
-        orgies.sortDirectory();
+        Orgeez orgeez = new Orgeez(directoryPath, configPath, moveFlag);
+        orgeez.sortDirectory();
     }
 }
