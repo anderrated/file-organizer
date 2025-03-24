@@ -10,6 +10,7 @@ public class FileMover {
     private StandardCopyOption moveOption;
 
     public FileMover(String moveOptionFlag) {
+        // move flag option enums
         switch(moveOptionFlag) {
             case "-a":
                 this.moveOption = StandardCopyOption.ATOMIC_MOVE;
@@ -21,6 +22,7 @@ public class FileMover {
                 this.moveOption = StandardCopyOption.REPLACE_EXISTING;
                 break;
             default:
+                // move flag not found
                 throw new IllegalArgumentException("Invalid move flag: " + moveOptionFlag);
         }
           

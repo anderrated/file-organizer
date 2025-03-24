@@ -30,12 +30,12 @@ public class Orgies {
         File[] files = sortDirectory.listFiles();
         for (File file : files) {
             String directoryCategory = categoriser.categorise(file);
-
+            // file cannot be categorised
             if (directoryCategory == null) {
                 System.out.println("Skipping " + file.getName() + " as it is uncategorised in configs.txt");
                 continue;
             }
-            
+            // move file into relevant directory
             Path targetDirectory = Paths.get(directoryCategory);
             this.mover.moveFile(file, targetDirectory);
         }
@@ -51,6 +51,7 @@ public class Orgies {
         // get arguments
         String directoryPath = args[0];
         String configPath = args[1];
+        // optional argument for move flag
         Optional<String> moveFlag = (args.length >= 3) ? Optional.of(args[2]) : Optional.empty();
         // utilise client to sort directory
         Orgies orgies = new Orgies(directoryPath, configPath, moveFlag);
