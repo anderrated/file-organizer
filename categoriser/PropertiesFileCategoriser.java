@@ -12,7 +12,7 @@ public class PropertiesFileCategoriser implements FileCategoriser {
         try {
             // file input stream for config
             InputStream input = new FileInputStream(configPath);
-            extensionMap.load(input);
+            this.extensionMap.load(input);
         } catch (IOException e) {
             // io error with config path
             throw new RuntimeException("Failed to load config file with error: " + e.getMessage());
@@ -30,8 +30,8 @@ public class PropertiesFileCategoriser implements FileCategoriser {
             return null;
         }
         String fileExtension = fileName.substring(dotIndex + 1);
-        if (extensionMap.containsKey(fileExtension)) {
-            return extensionMap.getProperty(fileExtension);
+        if (this.extensionMap.containsKey(fileExtension)) {
+            return this.extensionMap.getProperty(fileExtension);
         }
         // extension mapping not found
         return null;
