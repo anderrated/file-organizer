@@ -1,14 +1,11 @@
 import java.io.File;
 import java.nio.file.Path;
-import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Optional;
 
 import categoriser.FileCategoriser;
 import categoriser.PropertiesFileCategoriser;
 import mover.FileMover;
-
-import java.io.IOException;
 
 public class Orgies {
     private final FileCategoriser categoriser;
@@ -29,17 +26,21 @@ public class Orgies {
             return;
         } 
         // list files in directory
+        System.out.println("Preparing to sort " + this.directoryPath);
         File[] files = sortDirectory.listFiles();
         for (File file : files) {
             String directoryCategory = categoriser.categorise(file);
 
             if (directoryCategory == null) {
+                System.out.println("Skipping " + file.getName() + " as it is uncategorised in configs.txt");
                 continue;
             }
             
             Path targetDirectory = Paths.get(directoryCategory);
             this.mover.moveFile(file, targetDirectory);
         }
+
+        System.out.println("Sorting for " + this.directoryPath + " is complete :)");
     }
         
     public static void main(String[] args) {
